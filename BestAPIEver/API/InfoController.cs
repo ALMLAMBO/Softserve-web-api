@@ -19,5 +19,11 @@ namespace BestAPIEver.API {
 
 			return Ok(userInfo);
 		}
+
+		[HttpPost]
+		[Route("SetUserInfo")]
+		public IHttpActionResult SetUserInfo([FromBody]UserInfo userInfo) {
+			return Ok("Wohoooooo!");
+		}
     }
 }
