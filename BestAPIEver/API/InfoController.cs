@@ -1,12 +1,23 @@
-﻿using System;
+﻿using BestAPIEver.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 
 namespace BestAPIEver.API {
-    public class InfoController : ApiController {
-		
+
+	[RoutePrefix("api/info")]
+	public class InfoController : ApiController {
+		[HttpGet]
+		[Route("GetUserInfo")]
+		public IHttpActionResult GetUserInfo() {
+			UserInfo userInfo = new UserInfo() {
+				Age = 20,
+				FullName = "Aleksander Marinov"
+			};
+
+			return Ok(userInfo);
+		}
     }
 }
